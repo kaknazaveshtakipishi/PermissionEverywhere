@@ -5,7 +5,6 @@
         android:supportsRtl="true">
         <activity android:name=".PermissionActivity"
             android:theme="@style/Theme.Transparent">
-
         </activity>
     </application>
 
