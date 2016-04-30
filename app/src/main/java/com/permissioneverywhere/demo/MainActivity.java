@@ -17,16 +17,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ResultReceiver resultReceiver = new ResultReceiver(new Handler()){
-            @Override
-            protected void onReceiveResult(int resultCode, Bundle resultData) {
-                super.onReceiveResult(resultCode, resultData);
-            }
-        };
-        Intent intent = new Intent(getApplicationContext(), PermissionActivity.class);
-        intent.putExtra(Const.REQUEST_CODE,234);
-        intent.putExtra(Const.PERMISSIONS_ARRAY, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE});
-        intent.putExtra(Const.RESULT_RECEIVER, resultReceiver);
-        startActivity(intent);
+//        ResultReceiver resultReceiver = new ResultReceiver(new Handler()){
+//            @Override
+//            protected void onReceiveResult(int resultCode, Bundle resultData) {
+//                super.onReceiveResult(resultCode, resultData);
+//            }
+//        };
+//        Intent intent = new Intent(getApplicationContext(), PermissionActivity.class);
+//        intent.putExtra(Const.REQUEST_CODE,234);
+//        intent.putExtra(Const.PERMISSIONS_ARRAY, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE});
+//        intent.putExtra(Const.RESULT_RECEIVER, resultReceiver);
+//        startActivity(intent);
+
+        Intent intent = new Intent(getApplicationContext(), TestService.class);
+        startService(intent);
     }
 }
