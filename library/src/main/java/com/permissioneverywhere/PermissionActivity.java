@@ -14,9 +14,13 @@ public class PermissionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String[] permissionsArray = getIntent().getStringArrayExtra(Const.PERMISSIONS_ARRAY);
-        requestCode = getIntent().getIntExtra(Const.REQUEST_CODE, Const.DEFAULT_CODE);
-        ActivityCompat.requestPermissions(this, permissionsArray, requestCode);
+        if(getIntent() != null) {
+            String[] permissionsArray = getIntent().getStringArrayExtra(Const.PERMISSIONS_ARRAY);
+            requestCode = getIntent().getIntExtra(Const.REQUEST_CODE, Const.DEFAULT_CODE);
+            ActivityCompat.requestPermissions(this, permissionsArray, requestCode);
+        }else {
+            finish();
+        }
     }
 
     @Override
