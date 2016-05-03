@@ -1,4 +1,4 @@
-PermissionEverywhere
+PermissionEverywhere alpha
 =============
 <img src='art/screenshot.png' width='270' height='480' />
 <br>
