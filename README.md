@@ -1,6 +1,7 @@
 PermissionEverywhere
 =============
 <img src='raw/sample.png' width='270' height='480' />
+<br>
 Library enables to request a permission from any Context(Service, IntentService, etc). 
 It creates a Notification with prompt, when user click notification,
 opens a transparent Activity with our request to permission. 
