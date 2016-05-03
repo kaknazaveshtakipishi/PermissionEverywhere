@@ -27,6 +27,8 @@ import android.support.v4.os.ResultReceiver;
     intent.putExtra(Const.PERMISSIONS_ARRAY, permissions);
     intent.putExtra(Const.RESULT_RECEIVER, receiver);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
     PendingIntent pendingIntent = PendingIntent.getActivity(context, REQUEST_CODE_PUSH, intent,
         PendingIntent.FLAG_ONE_SHOT);
 

@@ -40,7 +40,7 @@ public class TestService extends Service {
                 @Override
                 protected Boolean doInBackground(Void... params) {
                     PermissionResponse response = PermissionEverywhere.getPermission(getApplicationContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                            123, "My Awesome App", "This app needs a permission", R.mipmap.ic_launcher).call();
+                            123, "My Awesome App", "This app needs a write permission", R.mipmap.ic_launcher).call();
 
                     boolean isGranted = response.isGranted();
 
