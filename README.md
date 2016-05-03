@@ -28,12 +28,17 @@ dependencies {
 ###With Callback
 ```java
 
- PermissionEverywhere.getPermission(getApplicationContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    REQ_CODE, "Notification title", "This app needs a write permission", R.mipmap.ic_launcher).enqueue(new PermissionResultCallback() {
-                @Override
-                public void onComplete(PermissionResponse permissionResponse) {
-                    Toast.makeText(TestService.this, "is Granted " + permissionResponse.isGranted(), Toast.LENGTH_SHORT).show();
-                }
+ PermissionEverywhere.getPermission(getApplicationContext(), 
+            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    REQ_CODE, 
+                    "Notification title", 
+                    "This app needs a write permission",
+                    R.mipmap.ic_launcher)
+                    .enqueue(new PermissionResultCallback() {
+                                @Override
+                                public void onComplete(PermissionResponse permissionResponse) {
+                                    Toast.makeText(TestService.this, "is Granted " + permissionResponse.isGranted(), Toast.LENGTH_SHORT).show();
+                                }
             });
 
 ```
@@ -43,8 +48,13 @@ dependencies {
 
  @Override
   protected Boolean doInBackground(Void... params) {
-      PermissionResponse response = PermissionEverywhere.getPermission(getApplicationContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-              123, "Notification title", "This app needs  a write permission", R.mipmap.ic_launcher).call();
+      PermissionResponse response = PermissionEverywhere.getPermission(getApplicationContext(), 
+      new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+              REQ_CODE,
+              "Notification title", 
+              "This app needs  a write permission", 
+              R.mipmap.ic_launcher)
+              .call();
       //waits..
       boolean isGranted = response.isGranted();
 
