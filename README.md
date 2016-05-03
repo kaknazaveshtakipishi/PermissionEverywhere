@@ -19,7 +19,7 @@ repositories {
 ####Permission Everywhere
 ```gradle
 dependencies {
-     compile ''
+     compile 'com.github.kaknazaveshtakipishi:PermissionEverywhere:alpha'
 }
 ```
 
