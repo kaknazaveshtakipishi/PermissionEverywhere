@@ -4,7 +4,7 @@ PermissionEverywhere alpha
 <br>
 Library enables to request a permission from any Context(Service, IntentService, etc). 
 It creates a Notification with prompt, when user click notification,
-opens a transparent Activity with our request to permission. 
+opens a Activity with our request to permission. 
 When user accepts, it sends back as Callback or as boolean synchonised value.
 
 
