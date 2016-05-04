@@ -4,7 +4,7 @@ PermissionEverywhere alpha
 <br>
 Library enables to request a permission from any Context(Service, IntentService, etc). 
 It creates a Notification with prompt, when user click notification,
-opens a transparent Activity with our request to permission. 
+opens a Activity with our request to permission. 
 When user accepts, it sends back as Callback or as boolean synchonised value.
 
 
@@ -19,7 +19,7 @@ repositories {
 ####Permission Everywhere
 ```gradle
 dependencies {
-     compile ''
+     compile 'com.github.kaknazaveshtakipishi:PermissionEverywhere:alpha'
 }
 ```
 
@@ -28,12 +28,17 @@ dependencies {
 ###With Callback
 ```java
 
- PermissionEverywhere.getPermission(getApplicationContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    REQ_CODE, "Notification title", "This app needs a write permission", R.mipmap.ic_launcher).enqueue(new PermissionResultCallback() {
-                @Override
-                public void onComplete(PermissionResponse permissionResponse) {
-                    Toast.makeText(TestService.this, "is Granted " + permissionResponse.isGranted(), Toast.LENGTH_SHORT).show();
-                }
+ PermissionEverywhere.getPermission(getApplicationContext(), 
+            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    REQ_CODE, 
+                    "Notification title", 
+                    "This app needs a write permission",
+                    R.mipmap.ic_launcher)
+                    .enqueue(new PermissionResultCallback() {
+                                @Override
+                                public void onComplete(PermissionResponse permissionResponse) {
+                                    Toast.makeText(TestService.this, "is Granted " + permissionResponse.isGranted(), Toast.LENGTH_SHORT).show();
+                                }
             });
 
 ```
@@ -43,8 +48,13 @@ dependencies {
 
  @Override
   protected Boolean doInBackground(Void... params) {
-      PermissionResponse response = PermissionEverywhere.getPermission(getApplicationContext(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-              123, "Notification title", "This app needs  a write permission", R.mipmap.ic_launcher).call();
+      PermissionResponse response = PermissionEverywhere.getPermission(getApplicationContext(), 
+      new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+              REQ_CODE,
+              "Notification title", 
+              "This app needs  a write permission", 
+              R.mipmap.ic_launcher)
+              .call();
       //waits..
       boolean isGranted = response.isGranted();
 
