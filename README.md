@@ -2,6 +2,8 @@ PermissionEverywhere alpha
 =============
 <img src='art/screenshot.png' width='270' height='480' />
 <br>
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PermissionEverywhere-green.svg?style=true)](https://android-arsenal.com/details/1/3528)
+<br>
 Library enables to request a permission from any Context(Service, IntentService, etc). 
 It creates a Notification with prompt, when user click notification,
 opens a Activity with our request to permission. 
