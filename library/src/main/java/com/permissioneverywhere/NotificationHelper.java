@@ -39,7 +39,7 @@ import android.support.v4.os.ResultReceiver;
         .setContentText(notificationText)
         .setAutoCancel(true)
         .setSound(defaultSoundUri)
-        setVibrate(new long[0])
+        .setVibrate(new long[0])
         .setContentIntent(pendingIntent);
 
     NotificationManager notificationManager =
