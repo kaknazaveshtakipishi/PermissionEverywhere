@@ -4,6 +4,8 @@ PermissionEverywhere alpha
 <br>
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PermissionEverywhere-green.svg?style=true)](https://android-arsenal.com/details/1/3528)
 <br>
+[![](https://jitpack.io/v/kaknazaveshtakipishi/PermissionEverywhere.svg)](https://jitpack.io/#kaknazaveshtakipishi/PermissionEverywhere)
+<br>
 Library allows to request a permission from any Context(Service, IntentService, etc). It creates a Notification with prompt (Allow/Deny). When user clicks on notification, an Activity opens up with our permission request.
 When user accepts, it sends back as Callback or as boolean synchonised value.
 
