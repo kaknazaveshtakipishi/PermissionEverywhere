@@ -1,6 +1,7 @@
 package com.permissioneverywhere;
 
 import android.Manifest;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -39,6 +40,7 @@ import android.support.v4.os.ResultReceiver;
         .setContentText(notificationText)
         .setAutoCancel(true)
         .setSound(defaultSoundUri)
+        .setPriority(Notification.PRIORITY_HIGH)
         .setVibrate(new long[0])
         .setContentIntent(pendingIntent);
 
