@@ -21,7 +21,7 @@ repositories {
 ####Permission Everywhere
 ```gradle
 dependencies {
-     compile 'com.github.kaknazaveshtakipishi:PermissionEverywhere:1.0.1'
+     compile 'com.github.kaknazaveshtakipishi:PermissionEverywhere:1.0.2'
 }
 ```
 
